@@ -1,42 +1,27 @@
-# Exercise 2 - Exercise 2 Description
+# Exercise 2 - Build an Integration Package
 
-In this exercise, we will create...
+In this exercise, we will wrap your current implementation such that it can be used by other applications.
 
-## Exercise 2.1 Sub Exercise 1 Description
+## Packaging
 
-After completing these steps you will have created...
-
-1. Click here.
-<br>![](/exercises/ex2/images/02_01_0010.png)
-
-2.	Insert this line of code.
-```abap
-response->set_text( |Hello ABAP World! | ). 
+```sh
+npm pack
 ```
 
+## Publishing
 
+### Locally
 
-## Exercise 2.2 Sub Exercise 2 Description
+Move the `tgz` file to ...
 
-After completing these steps you will have...
+### Via NPM (optional)
 
-1.	Enter this code.
-```abap
-DATA(lt_params) = request->get_form_fields(  ).
-READ TABLE lt_params REFERENCE INTO DATA(lr_params) WITH KEY name = 'cmd'.
-  IF sy-subrc = 0.
-    response->set_status( i_code = 200
-                     i_reason = 'Everything is fine').
-    RETURN.
-  ENDIF.
-
+```sh
+npm publish
 ```
-
-2.	Click here.
-<br>![](/exercises/ex2/images/02_02_0010.png)
 
 ## Summary
 
-You've now ...
+You've now packaged and published your work to a place where it can be found by other applications.
 
-Continue to - [Exercise 3 - Excercise 3 ](../ex3/README.md)
+In the next [exercise 3](../ex3/README.md), you will see how such a package can be embedded again into an application.
