@@ -27,7 +27,7 @@ node_modules/cds-integration-demo
 ```
 
 Compare this with the `srv/external` folder, and you can see that this is pretty much the same content:
-- `API_BUSINESS_PARTNER.csn`: the CDS model that you imported with `cds import``
+- `API_BUSINESS_PARTNER.csn`: the CDS model that you imported with `cds import`
 - `API_BUSINESS_PARTNER.js`: a bit of glue code as 'implementation' when the service is mocked
 - `data/...`: sample data
 - `index.cds`: Contains additional cds code for events, which we will see later.  Also acts as 'main' file to allow shorter import paths.
@@ -44,7 +44,7 @@ Compare this with the `srv/external` folder, and you can see that this is pretty
 
 2. Remove folder `srv/external`.
 
-## Verify
+### Verify
 
 The application runs as before, both in mock mode:
 
@@ -63,8 +63,8 @@ cds watch --profile sandbox
 We haven't dicussed yet how to update the cache table holding the `Customers` data.  Events will inform our application whenever the remote BusinessPartner has changed.<br>
 Let's see what we need to do and where the integration package already helps us.
 
-#### Event definitions
-Go to `node_modules/cds-integration-demo/s4/bupa/index.cds` (you can also navigate from the first line in `mashup.cds` using `Ctrl+Click`).
+### Event definitions
+Go to `node_modules/cds-integration-demo/s4/bupa/index.cds` (you can also navigate from the first line in `mashup.cds` using <kbd>Ctrl+Click</kbd>).
 
 You can see how it adds an event definition to the BusinessPartnerService:
 
@@ -80,7 +80,7 @@ This allows [CAP's advanced support for events and messaging](https://cap.cloud.
 
 Also, the event name `BusinessPartner.Changed` is semantically closer to the domain and easier to read than the underlying technical event `sap.s4.beh.businesspartner.v1.BusinessPartner.Changed.v1`, which can be found at [SAP API Business Hub](https://api.sap.com/event/CE_BUSINESSPARTNEREVENTS/resource).  As of now, synchronous and asynchronous APIs from SAP S/4HANA sources are not correlated in one place there.
 
-#### Emit events locally
+### Emit events locally
 
 As we don't have [SAP Event Mesh](https://cap.cloud.sap/docs/guides/messaging/#using-sap-event-mesh) running locally, it would be great if something could emit events when testing.  Luckily, the package has support for this scenario in file `node_modules/cds-integration-demo/s4/bupa/API_BUSINESS_PARTNER.js`:
 
@@ -95,7 +95,7 @@ this.after('UPDATE', A_BusinessPartner, async data => {
 This means whenever you change data through the `API_BUSINESS_PARTNER` mock service, a local event is emitted.
 Also note how the event name `BusinessPartner.Changed` matches to the event definition from the CDS code above.
 
-#### React to events
+### React to events
 
 To close the loop, we only need to react in the application.
 
@@ -111,7 +111,7 @@ S4bupa.on('BusinessPartner.Changed', async ({ event, data }) => {
 })
 ```
 
-#### Put it all together
+### Put it all together
 
 Start the application with mocks:
 ```
