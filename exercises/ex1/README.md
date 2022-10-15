@@ -133,7 +133,6 @@ module.exports = cds.service.impl(async function() {
 
   // Delegate Value Help reads for Customers to S4 backend
   this.on ('READ', 'Customers', req => {
-    req.query.where({ IsNaturalPerson:'X' }) // additional filter condition
     console.log ('>> delegating to S4 service...')
     return S4bupa.run(req.query)
   })
