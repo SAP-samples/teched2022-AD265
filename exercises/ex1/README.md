@@ -227,4 +227,4 @@ if (!replicated) {
 
 You've now learned how to integrate a remote service step by step.
 
-In the next [exercise 2](../ex2/README.md), you will package this implementation such that it could be used as an integration package by other applications.
+In the next [exercise](../ex2/README.md), you will see how an integration package can simplify these steps quite significantly.

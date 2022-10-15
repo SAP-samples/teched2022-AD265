@@ -1,21 +1,27 @@
-# Exercise 3 - Use a Prebuilt Integration Package
+# Exercise 2 - Build an Integration Package
 
-In this exercise, you will see how the integration package can be embedded into an application.
+In this exercise, we will wrap your current implementation such that it can be used by other applications.
 
-## Install
+## Packaging
 
 ```sh
-npm add ../...tgz
+npm pack
 ```
 
-## Adjust Application
+## Publishing
 
-## Run Locally
+### Locally
+
+Move the `tgz` file to ...
+
+### Via NPM (optional)
 
 ```sh
-cds watch
+npm publish
 ```
 
 ## Summary
 
-You've now learned how to add an integration package.  You've also seen how much application code became obsolete and could be removed.
+You've now packaged and published your work to a place where it can be found by other applications.
+
+In the next [exercise 3](../ex3/README.md), you will see how such a package can be embedded again into an application.

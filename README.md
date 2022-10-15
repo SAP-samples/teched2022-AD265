@@ -18,8 +18,8 @@ The requirements to follow the exercises in this repository are...
 
 - [Getting Started](exercises/ex0/)
 - [Exercise 1 - Integrate a service from SAP S/4HANA Cloud](exercises/ex1/)
-- [Exercise 2 - Build an integration package](exercises/ex2/)
-- [Exercise 3 - Use a prebuilt integration package](exercises/ex3/)
+- [Exercise 2 - Use a prebuilt integration package](exercises/ex2/)
+<!-- - [Exercise 3 - Build an integration package](exercises/ex2/) -->
 
 
 ## How to obtain support
