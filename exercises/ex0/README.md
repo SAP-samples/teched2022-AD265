@@ -8,10 +8,27 @@ Open this URL for SAP Business Application Studio in the account prepared for th
 Use the credentials provided by your instructor.
 
 
-## Clone Project
+## Clone and Install the Project
+
+```sh
+git clone https://github.com/SAP-samples/teched2022-AD265 -b initial
+
+npm install
+```
 
 ## Run Locally
 
+```sh
+cd teched2022-AD265
+
+cds watch
+```
+
+Open http://carol@localhost:4004/
+
+Go to [`Incidents → Fiori preview`](http://carol@localhost:4004/$fiori-preview/IncidentsService/Incidents#preview-app), which opens a SAP Fiori elements list page for the `Incidents` entity.
+
+> Note the `carol@` string in the URL, which logs you in with user local mock `carol`.
 
 ## Summary
 
