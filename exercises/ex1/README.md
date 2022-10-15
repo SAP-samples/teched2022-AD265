@@ -171,7 +171,7 @@ With the [Rest client for VS Code](https://marketplace.visualstudio.com/items?it
 
 Create a file `tests.http`:
 
-```http
+```
 ###
 # @name IncidentsCreate
 

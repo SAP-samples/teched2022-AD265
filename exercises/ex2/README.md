@@ -120,7 +120,7 @@ cds watch
 
 and change one of our cached customers `Z100001` (again, in an `.http` file)
 
-```http
+```
 ###
 PUT http://localhost:4004/api-business-partner/A_BusinessPartner/Z100001
 Authorization: Basic carol:
