@@ -18,7 +18,7 @@ The requirements to follow the exercises in this repository are...
 
 - [Getting Started](https://github.com/SAP-samples/teched2022-AD265/wiki/0.-Getting-Started)
 - [Exercise 1 - Import an API from SAP S/4HANA Cloud](https://github.com/SAP-samples/teched2022-AD265/wiki/1.-Importing-APIs)
-- [Exercise 2 - Testing the API](https://github.com/SAP-samples/teched2022-AD265/wiki/2.-Local-%26-Hybrid-Tests)
+- [Exercise 2 - Testing the API](https://github.com/SAP-samples/teched2022-AD265/wiki/2.-Local-Tests)
 - [Exercise 3 - Delegating Requests](https://github.com/SAP-samples/teched2022-AD265/wiki/3.-Delegating-Requests)
 - [Exercise 4 - Replicating Data](https://github.com/SAP-samples/teched2022-AD265/wiki/4.-Replicating-Data)
 - [Exercise 5 - Prebuilt Integration Packages](https://github.com/SAP-samples/teched2022-AD265/wiki/5.-Prebuilt-Integration-Packages)
