@@ -8,7 +8,8 @@
   "dependencies": {
     "@sap-cloud-sdk/http-client": "^2.9.0",
     "@sap/cds": "^6",
-    "express": "^4"
+    "express": "^4",
+    "s4-bupa-integration": "file:../s4-bupa-integration"
   },
   "devDependencies": {
     "sqlite3": "^5.0.4"
@@ -59,5 +60,8 @@
         }
       }
     }
-  }
+  },
+  "files": [
+    "srv/external/"
+  ]
 }

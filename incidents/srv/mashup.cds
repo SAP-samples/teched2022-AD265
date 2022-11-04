@@ -1,5 +1,5 @@
 using { acme.incmgt, IncidentsService } from './incidents-service';
-using { s4 } from './external';
+using { s4 } from 's4-bupa-integration/bupa';
 
 extend service IncidentsService with {
   entity Customers as projection on s4.simple.Customers;
