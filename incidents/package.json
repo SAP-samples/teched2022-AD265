@@ -48,7 +48,10 @@
   "cds": {
     "requires": {
       "db": {
-        "kind": "sql"
+        "kind": "sqlite",
+        "credentials": {
+          "database": "db.sqlite"
+        }
       },
       "API_BUSINESS_PARTNER": {
         "kind": "odata-v2",
@@ -60,8 +63,5 @@
         }
       }
     }
-  },
-  "files": [
-    "srv/external/"
-  ]
+  }
 }

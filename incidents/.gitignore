@@ -25,3 +25,5 @@ mta_archives/
 
 *.iml
 *.flattened-pom.xml
+
+*.tgz
