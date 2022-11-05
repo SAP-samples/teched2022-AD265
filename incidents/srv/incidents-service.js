@@ -4,22 +4,30 @@ module.exports = (async function() {
   const S4bupa = await cds.connect.to('API_BUSINESS_PARTNER')
 
   // Delegate Value Help reads for Customers to S4 backend
-  this.on('READ', 'Customers', (req) => {
-    console.log('>> delegating to S4 service...')
+  this.on('READ', ['Customers', 'CustomerAddresses'], (req) => {
+    console.log(`>> delegating '${req.target.name}' to S4 service...`, req.query)
     return S4bupa.run(req.query)
   })
 
   const db = await cds.connect.to('db')     // our primary database
-  const { Customers }  = db.entities('s4.simple')  // CDS definition of the Customers entity
+  const { Customers, CustomerAddresses }  = db.entities('s4.simple')  // CDS definition of the entities
 
   this.after (['CREATE','UPDATE'], 'Incidents', async (data) => {
     const { customer_ID: ID } = data
     if (ID) {
       let replicated = await db.exists (Customers,ID)
       if (!replicated) { // initially replicate Customers info
-        console.log ('>> Updating customer', ID)
         let customer = await S4bupa.read (Customers,ID)
+        console.log ('>> Updating customer', ID, customer)
         await INSERT(customer) .into (Customers)
+
+        let customerAddresses = await S4bupa.run (SELECT.from(CustomerAddresses).where({bupaID: ID}))
+        if (customerAddresses.length) {
+          console.log ('>> Updating customer addresses', customerAddresses)
+          try {
+            await INSERT(customerAddresses) .into (CustomerAddresses)
+          } catch (err) {/*ignore */ }
+        }
       }
     }
   })

@@ -1,16 +1,21 @@
 using { acme.incmgt, IncidentsService } from './incidents-service';
 using { s4 } from 's4-bupa-integration/bupa';
 
-extend service IncidentsService with {
-  entity Customers as projection on s4.simple.Customers;
-}
-
 extend incmgt.Incidents with {
   customer : Association to s4.simple.Customers;
 }
 
-annotate s4.simple.Customers with @cds.persistence: {table,skip:false};
+extend service IncidentsService with {
+  @readonly entity Customers as projection on s4.simple.Customers;
+  @readonly entity CustomerAddress as projection on s4.simple.CustomerAddress;
+}
 
+extend projection IncidentsService.Incidents  {
+  customerAddress: Association to s4.simple.CustomerAddress on customerAddress.bupaID = customer.ID
+}
+
+annotate s4.simple.Customers with @cds.persistence: {table,skip:false};
+annotate s4.simple.CustomerAddresses with @cds.persistence: {table,skip:false};
 
 // --- Fiori annotations
 using from '../app/fiori';
@@ -27,6 +32,7 @@ annotate IncidentsService.Incidents with @(
     FieldGroup #GeneralInformation : {
       Data: [
         { Value: customer_ID, Label: 'Customer'},
+        { Label: 'Address', $Type  : 'UI.DataFieldForAnnotation', Target : 'customerAddress/@Communication.Contact' },
         ...,
       ]
     },
