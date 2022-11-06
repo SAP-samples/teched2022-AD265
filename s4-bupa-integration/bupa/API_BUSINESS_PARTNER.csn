@@ -1335,13 +1335,25 @@
           "keys": []
         },
         "to_BusinessPartnerAddress": {
-          "@cds.ambiguous": "missing on condition?",
           "type": "cds.Association",
           "target": "API_BUSINESS_PARTNER.A_BusinessPartnerAddress",
           "cardinality": {
             "max": "*"
           },
-          "keys": []
+          "on": [
+            {
+              "ref": [
+                "to_BusinessPartnerAddress",
+                "BusinessPartner"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "BusinessPartner"
+              ]
+            }
+          ]
         },
         "to_BusinessPartnerBank": {
           "@cds.ambiguous": "missing on condition?",
