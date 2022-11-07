@@ -2,5 +2,11 @@
   "files.exclude": {
     ".reuse/**": true,
     "LICENSE": true
-  }
+  },
+  "sqltools.connections": [
+    {
+        "database": "incidents/db.sqlite",
+        "driver": "sqlite"
+    }
+  ]
 }
