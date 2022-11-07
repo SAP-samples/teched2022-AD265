@@ -12,7 +12,9 @@ Learn how SAP Cloud SDK covers connectivity, destinations, and resilience behind
 
 ## Requirements
 
-The requirements to follow the exercises in this repository are...
+To follow the exercises in this repository, you need to have
+- Either a subscription for  SAP Business Application Studio, or a local VS Code installation
+- A browser, preferably Google Chrome
 
 ## Exercises
 
