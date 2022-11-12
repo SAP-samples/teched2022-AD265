@@ -1,5 +1,16 @@
 #!/usr/bin/env node
 
+/**
+ * Adds missing ON condition for
+ * - A_BusinessPartner.to_BusinessPartnerAddress
+ *
+ * Allowing queries like `/api-business-partner/A_BusinessPartner?$expand=to_BusinessPartnerAddress`
+ *
+ * These could not be imported automatically, as information is missing in the original EDMX document.
+ *
+ * Script is to be executed only once after a fresh import.
+ */
+
 require('util').inspect.defaultOptions.depth = 11
 const { readFileSync, writeFileSync } = require('fs')
 
