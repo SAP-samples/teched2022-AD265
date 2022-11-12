@@ -21,6 +21,8 @@ module.exports = (async function() {
         console.log ('>> Updating customer', ID, customer)
         await INSERT(customer) .into (Customers)
 
+        // fetch the addresses
+        // TODO eliminate this by adding it as an `expand` clause to the query above
         let customerAddresses = await S4bupa.run (SELECT.from(CustomerAddresses).where({bupaID: ID}))
         if (customerAddresses.length) {
           console.log ('>> Updating customer addresses', customerAddresses)
