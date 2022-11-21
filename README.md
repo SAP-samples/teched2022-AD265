@@ -1,3 +1,6 @@
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/teched2022-AD265)](https://api.reuse.software/info/github.com/SAP-samples/teched2022-AD265)
+
+
 # AD265 - Bringing Service Integration to Your Fingertips
 
 ## Description
