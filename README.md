@@ -27,7 +27,7 @@ To follow the exercises in this repository, you need to have
 - [Exercise 3 - Delegating Requests](https://github.com/SAP-samples/teched2022-AD265/wiki/3.-Delegating-Requests)
 - [Exercise 4 - Replicating Data](https://github.com/SAP-samples/teched2022-AD265/wiki/4.-Replicating-Data)
 - [Exercise 5 - Prebuilt Integration Packages](https://github.com/SAP-samples/teched2022-AD265/wiki/5.-Prebuilt-Integration-Packages)
-- [Summary](6.-Summary)
+- [Summary](https://github.com/SAP-samples/teched2022-AD265/wiki/6.-Summary)
 
 
 ## How to obtain support
